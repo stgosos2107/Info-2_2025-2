@@ -70,3 +70,25 @@ axs[3].set_xlabel('Valor')
 axs[3].set_ylabel('Frecuencia')
 axs[3].legend()
 axs[3].grid(True, linestyle='--', alpha=0.5)
+
+# Panel 5: boxplot
+axs[4].boxplot(r4, vert=True, widths=0.5)
+axs[4].set_title('Caja y Bigotes – Fila 4')
+axs[4].set_ylabel('Valor')
+axs[4].grid(True, axis='y', linestyle='--', alpha=0.5)
+axs[4].plot([], [], label='Fila 4')
+axs[4].legend(loc='upper right')
+
+# Panel 6: gráfico de pastel
+sizes = r5[:6]
+sizes = sizes / sizes.sum()
+labels = [f'S{i}' for i in range(1, 7)]
+axs[5].pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+axs[5].set_title('Pastel – Fila 5 (primeros 6)')
+axs[5].axis('equal')
+axs[5].legend(labels, loc='lower center', bbox_to_anchor=(0.5, -0.08), ncol=3, frameon=False)
+
+# Título general y guardado
+fig.suptitle('Ejercicio NumPy + Matplotlib (subplots a mano)', fontsize=14, y=0.98)
+plt.savefig('ejercicio_numpy_matplotlib.png', dpi=300, bbox_inches='tight')
+plt.show()

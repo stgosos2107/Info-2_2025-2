@@ -35,6 +35,14 @@ rects = [
 ]
 axs = [fig.add_axes(r) for r in rects]
 
+# Ajuste automático de márgenes y espaciado
+fig.subplots_adjust(top=0.90, bottom=0.08, hspace=0.5, wspace=0.4)
+
+# Título general ajustado (más bajo y centrado)
+fig.suptitle('Ejercicio NumPy + Matplotlib (subplots a mano)',
+             fontsize=16, y=0.97, fontweight='bold')
+
+
 # 5) Asignar cada fila de la transpuesta a un gráfico distinto
 r0, r1, r2, r3, r4, r5 = M_T
 
@@ -88,7 +96,9 @@ axs[5].set_title('Pastel – Fila 5 (primeros 6)')
 axs[5].axis('equal')
 axs[5].legend(labels, loc='lower center', bbox_to_anchor=(0.5, -0.08), ncol=3, frameon=False)
 
-# Título general y guardado
-fig.suptitle('Ejercicio NumPy + Matplotlib (subplots a mano)', fontsize=14, y=0.98)
-plt.savefig('ejercicio_numpy_matplotlib.png', dpi=300, bbox_inches='tight')
+# Ajuste automático y título general
+fig.subplots_adjust(top=0.90, bottom=0.08, hspace=0.5, wspace=0.4)
+fig.suptitle('Ejercicio NumPy + Matplotlib (subplots a mano)',
+             fontsize=16, y=0.97, fontweight='bold')
+
 plt.show()

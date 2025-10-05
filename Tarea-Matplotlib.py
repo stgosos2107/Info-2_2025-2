@@ -53,3 +53,20 @@ axs[1].set_xlabel('Índice')
 axs[1].set_ylabel('Valor')
 axs[1].legend()
 axs[1].grid(True, linestyle=':', alpha=0.5)
+
+# Panel 3: gráfico de barras
+idx20 = np.arange(20)
+axs[2].bar(idx20, r2[:20], label='Fila 2 (barras)')
+axs[2].set_title('Barras – Fila 2 (20 primeros)')
+axs[2].set_xlabel('Índice')
+axs[2].set_ylabel('Valor')
+axs[2].legend()
+axs[2].grid(True, axis='y', linestyle='--', alpha=0.5)
+
+# Panel 4: histograma
+axs[3].hist(r3, bins=20, label='Fila 3 (histograma)', alpha=0.85)
+axs[3].set_title('Histograma – Fila 3')
+axs[3].set_xlabel('Valor')
+axs[3].set_ylabel('Frecuencia')
+axs[3].legend()
+axs[3].grid(True, linestyle='--', alpha=0.5)

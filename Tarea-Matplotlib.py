@@ -37,3 +37,19 @@ axs = [fig.add_axes(r) for r in rects]
 
 # 5) Asignar cada fila de la transpuesta a un gráfico distinto
 r0, r1, r2, r3, r4, r5 = M_T
+
+# Panel 1: gráfico de línea
+axs[0].plot(r0, label='Fila 0 (línea)')
+axs[0].set_title('Línea – Fila 0')
+axs[0].set_xlabel('Índice')
+axs[0].set_ylabel('Valor')
+axs[0].legend()
+axs[0].grid(True, linestyle='--', alpha=0.5)
+
+# Panel 2: gráfico de dispersión
+axs[1].scatter(np.arange(r1.size), r1, s=16, label='Fila 1 (scatter)')
+axs[1].set_title('Dispersión – Fila 1')
+axs[1].set_xlabel('Índice')
+axs[1].set_ylabel('Valor')
+axs[1].legend()
+axs[1].grid(True, linestyle=':', alpha=0.5)
